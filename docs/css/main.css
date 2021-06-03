@@ -1,0 +1,416 @@
+
+canvas {
+  background: #111;
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.container {
+  height: 100%;
+  position: relative;
+}
+
+.container .page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.wrap {
+  position: absolute;
+  display: flex;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  flex-direction: column;
+  height: 560px;
+  width: 1000px;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap .top {
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  flex-grow: 2;
+}
+
+
+.wrap .center {
+  margin-top: 10px;
+  flex-grow: 3;
+  text-align: center;
+}
+
+
+.center .portrait {
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* 按钮样式 */
+.bottom {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+}
+
+.bottom li {
+  margin: 0 18px;
+}
+
+li img {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #2c3a47;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+li a {
+  position: relative;
+  display: block;
+  color: white;
+  width: 64px;
+  height: 64px;
+  font-size: 36px;
+  text-align: center;
+  line-height: 66px;
+  border-radius: 50%;
+  background: #2c3a47;
+  transition: 0.6s;
+}
+
+li a:hover {
+  background-color: #38d;
+  transform: scale(1.05,1.05);
+}
+
+
+
+
+/* 页面样式 */
+.container .page1 {
+  /* background-image: url('../img/about.jpg'); */
+  left: 0;
+  top: 0;
+}
+
+.container .page2 {
+  /* background-image: url("../img/foo.jpg"); */
+  top: 0;
+  left: 105%;
+
+}
+
+.page2 .info {
+  background-color: rgba(21, 240, 250, 0.3);
+  height: 400px;
+  width: 800px;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.info div {
+  position: absolute;
+}
+.info .info_right{
+  transform: rotate(180deg);
+}
+
+.info .info_text {
+  color: #ADADAD;
+  width: 700px;
+  height: 300px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  opacity: 0;
+}
+
+.info_text_active{
+   animation: enlarge 3s;
+}
+
+@keyframes enlarge{
+  0%{
+    transform: scale(0.4,0.4);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+}
+
+.info_text p {
+  /* font-size: 18px; */
+  font-weight: bold;
+  color: #38d;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 60px;
+  user-select: none;
+}
+
+
+
+
+
+
+
+.container .page3 {
+  /* background-image: url('../img/work.jpg'); */
+  top: 105%;
+  left: 0;
+}
+
+.page3 .center {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.center .img-item {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  height: 300px;
+  transition: all 0.4s;
+  width: 240px;
+}
+
+.center .img-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0px 0px 36px rgb(0 0 0 / 10%);
+  cursor: pointer;
+}
+
+
+.center .img-item .tip {
+  margin-top: 20px;
+  color: #FF00FF;
+}
+
+.img_active{
+  animation: enlarge 3s;
+}
+
+.img-item .word{
+  margin-top: 10px;
+  text-align: left;
+  padding: 8px;
+  color: #000;
+}
+
+
+.container .page4 {
+  top: 105%;
+  left: 105%;
+}
+
+
+
+.search{
+  display: flex;
+  transform: translateX(16%);
+}
+
+.search input{
+  box-sizing: border-box;
+  text-align:center;
+  font-size:1.4em;
+  border-radius:4px;
+  border:1px solid #c8cccf;
+  color:#6a6f77;
+  -web-kit-appearance:none;
+  -moz-appearance: none;
+  display:block;
+  outline:0;
+  padding:0 1em;
+  text-decoration:none;
+  width:100%;
+}
+.search input:focus{
+  border:1px solid #ff7496;
+}
+
+button{
+  font-family: 'myfont';
+  outline: none;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.search button{
+  margin-left: 10px;
+  background-color: pink;
+  border-radius: 10px;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button:hover{
+  transform: scale(1.05,1.05);
+}
+button:active{
+  transform: none;
+}
+
+.letter_wrap {
+  position: relative;
+  height: 400px;
+  width: 550px;
+  margin: 30px 0;
+  background-color: #336666;
+}
+.letter_wrap .letter {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 490px;
+  height: 400px;
+  background-color: #fff;
+  -webkit-transition: top 0.4s ease-in;
+  transition: top 0.4s ease-in;
+  cursor: pointer;
+}
+.letter_wrap .letter h2 {
+  margin: 0 0 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+ 
+}
+.letter_wrap .letter .rec {
+  display: block;
+  height: 18px;
+  margin: 10px 10px;
+  background-color: #eee;
+  width: 400px;
+}
+.letter_wrap .letter .letter-text{
+ display: block;
+ text-align: left;
+ line-height: 20px;
+ font-size: 24px;
+ width: 360px;
+ margin: auto;
+}
+
+.letter_wrap .side {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  /* z-index: 10; */
+}
+.letter_wrap .side-left {
+  left: 0;
+  border-width: 200px 0 200px 275px;
+  border-color: transparent transparent transparent #C2EBEB;
+}
+.letter_wrap .side-right {
+  right: 0;
+  border-width: 200px 275px 200px 0;
+  border-color: transparent #C2EBEB transparent transparent;
+}
+.letter_wrap .side-bottom {
+  top: 160px;
+  border-width: 0 275px 240px 275px;
+  border-color: transparent transparent #66CCCC transparent;
+}
+
+
+.confirm-box{
+  position: absolute;
+  color: red;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+  padding: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.confirm-box div{
+  margin: 15px;
+}
+.confirm-box .name{
+  color: #000;
+  font-size: 25px;
+
+}
+
+.comfirm_btn{
+  margin-top: 5px;
+  width: 80px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #409eff;
+  border-radius: 10px;
+  color: red;
+}
+
+.warning{
+  transition: all 1s;
+}
+
+.show{
+  position: absolute;
+  color: #E6A23C;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 300px;
+  height: 60px;
+  text-indent: 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  align-items: center;
+  line-height: 60px;
+  font-size: 30px;
+}
+
+
+.init{
+  position: absolute;
+  background-color: #409EFF;
+  bottom: 70px;
+  right: 300px;
+  padding: 5px;
+  height: 50px;
+  width: 60px;
+  font-size: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  text-align: center;
+  display: none;
+  opacity: 0.5;
+}

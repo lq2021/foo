@@ -1,0 +1,203 @@
+ html,
+ body,
+ div,
+ span,
+ applet,
+ object,
+ iframe,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ blockquote,
+ pre,
+ a,
+ abbr,
+ acronym,
+ address,
+ big,
+ cite,
+ code,
+ del,
+ dfn,
+ em,
+ img,
+ ins,
+ kbd,
+ q,
+ s,
+ samp,
+ small,
+ strike,
+ strong,
+ sub,
+ sup,
+ tt,
+ var,
+ b,
+ u,
+ i,
+ center,
+ dl,
+ dt,
+ dd,
+ ol,
+ ul,
+ li,
+ fieldset,
+ form,
+ label,
+ legend,
+ table,
+ caption,
+ tbody,
+ tfoot,
+ thead,
+ tr,
+ th,
+ td,
+ article,
+ aside,
+ canvas,
+ details,
+ embed,
+ figure,
+ figcaption,
+ footer,
+ header,
+ hgroup,
+ menu,
+ nav,
+ output,
+ ruby,
+ section,
+ summary,
+ time,
+ mark,
+ audio,
+ video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   font-weight: normal;
+   vertical-align: baseline;
+   font-family: 'myfont';
+ }
+
+ /* HTML5 display-role reset for older browsers */
+ article,
+ aside,
+ details,
+ figcaption,
+ figure,
+ footer,
+ header,
+ hgroup,
+ menu,
+ nav,
+ section {
+   display: block;
+ }
+
+ ol,
+ ul,
+ li {
+   list-style: none;
+ }
+
+ table {
+   border-collapse: collapse;
+   border-spacing: 0;
+ }
+
+ /* custom */
+ a {
+   color: #7e8c8d;
+   text-decoration: none;
+ }
+
+ html,
+ body {
+   width: 100%;
+   height: 100%;
+   color: #fff;
+ }
+
+ body {
+  font-family: 'myfont';
+  font-size: 20px;
+   line-height: 1;
+   -webkit-text-size-adjust: none;
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   overflow: hidden;
+ }
+
+
+ /*清除浮动*/
+ .clearfix:before,
+ .clearfix:after {
+   content: " ";
+   display: inline-block;
+   height: 0;
+   clear: both;
+   visibility: hidden;
+ }
+
+ .clearfix {
+   *zoom: 1;
+ }
+
+ /*隐藏*/
+ .dn {
+   display: none;
+ }
+
+
+ @font-face {
+   font-family: 'myfont';
+   font-style: normal;
+   src: url('../font/font.ttf');
+ }
+
+
+ .title-text {
+   font-family: 'myfont';
+   font-size: 40px;
+ }
+
+ @keyframes flicker {
+   50% {
+     color: white;
+     filter: saturate(200%) hue-rotate(20deg);
+   }
+ }
+
+ .trans {
+   display: inline-block;
+   width: 100rpx;
+   height: 100rpx;
+   border-radius: 50%;
+   overflow: hidden;
+   animation: rotate 5s linear infinite;
+   cursor: pointer;
+ }
+
+ @keyframes rotate {
+   from {
+     transform: rotate(0deg)
+   }
+
+   to {
+     transform: rotate(360deg)
+   }
+ }
+
+
+ input, button{
+   font-family: 'myfont';
+ }
