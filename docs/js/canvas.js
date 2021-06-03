@@ -1,8 +1,9 @@
-function test() {
 
+function test() {
+  
   var canvas = document.getElementById("myCanvas"),
     context = canvas.getContext("2d"),
-    stars = 800;
+    stars = 1000;
   for (var i = 0; i < stars; i++) {
     x = Math.random() * canvas.offsetWidth;
     y = Math.random() * canvas.offsetHeight;
@@ -26,7 +27,7 @@ function test() {
   }
   var canvas = document.getElementById("myCanvas"),
     context = canvas.getContext("2d"),
-    stars = 500,
+    stars = 1000,
     colorrange = [0, 60, 240];
   for (var i = 0; i < stars; i++) {
     var x = Math.random() * canvas.offsetWidth;
