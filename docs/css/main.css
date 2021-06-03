@@ -1,5 +1,7 @@
 
 canvas {
+  height: 100%;
+  width: 100%;
   background: #111;
   position: absolute;
   transition: all 0.5s;
