@@ -129,7 +129,7 @@
  }
 
  body {
-  font-family: 'myfont';
+  font-family: 'myfont' Arial, Helvetica, sans-serif;
   font-size: 20px;
    line-height: 1;
    -webkit-text-size-adjust: none;
