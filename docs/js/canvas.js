@@ -3,7 +3,6 @@
   $("#body canvas").remove();
   var stars="<canvas id='canvas'></canvas>"
   $("body").prepend(stars)
-  setTimeout(()=>{
     var canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d'),
     w = canvas.width = window.innerWidth,
@@ -100,4 +99,4 @@
   }
   
   animation();	
-  },10)
+
