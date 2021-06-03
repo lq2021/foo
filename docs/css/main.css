@@ -1,9 +1,10 @@
 
 canvas {
-  
   background: #111;
   position: absolute;
-  transition: all 0.5s;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 
 .container {
@@ -98,13 +99,11 @@ li a:hover {
 
 /* 页面样式 */
 .container .page1 {
-  /* background-image: url('../img/about.jpg'); */
   left: 0;
   top: 0;
 }
 
 .container .page2 {
-  /* background-image: url("../img/foo.jpg"); */
   top: 0;
   left: 105%;
 
@@ -155,7 +154,6 @@ li a:hover {
 }
 
 .info_text p {
-  /* font-size: 18px; */
   font-weight: bold;
   color: #38d;
   box-sizing: border-box;
@@ -172,7 +170,6 @@ li a:hover {
 
 
 .container .page3 {
-  /* background-image: url('../img/work.jpg'); */
   top: 105%;
   left: 0;
 }
