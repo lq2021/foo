@@ -1,11 +1,14 @@
 $(function () {
+  let pc = true;
+  if (!(window.screen.availWidth * 1 >= 420)) {
+    pc = false;
+  }
   let flog = 0;
   let name;
   let oldName = localStorage.getItem('name');
   let lock = 1;
   const container = $(".container");
-  const letter = [
-    {
+  const letter = [{
       name: '朱翡珊',
       text: `愿你的未来纯净明朗，像你此刻的可爱目光，在世间美好的命运中，愿你的命运美好欢畅。`
     },
@@ -23,31 +26,31 @@ $(function () {
     },
     {
       name: '肖腊',
-      text:  `在我印象中你是一个非常‘暴力 凶残’的女汉子，特别是有一次打我后脑勺，痛的我要命。在未来的生活里，也要有这种大姐大的气质，活出自己的人生。`
+      text: `在我印象中你是一个非常‘暴力 凶残’的女汉子，特别是有一次打我后脑勺，痛的我要命。在未来的生活里，也要有这种大姐大的气质，活出自己的人生。`
     },
     {
       name: '彭强',
-      text:  `你是一个‘前辈’式的朋友，佩服你的潇洒气质。祝你在金融行业打出一片天下，到时候，我好找你借钱。`
+      text: `你是一个‘前辈’式的朋友，佩服你的潇洒气质。祝你在金融行业打出一片天下，到时候，我好找你借钱。`
     },
     {
       name: '王鹏',
-      text:  `好好学习，说不定以后我的孩子在你手里读书呢，你可以别误人子弟！ 望未来情场职场场场得意`
+      text: `好好学习，说不定以后我的孩子在你手里读书呢，你可以别误人子弟！ 望未来情场职场场场得意`
     },
     {
       name: '熊仕林',
-      text:  `你确实很聪明，但是你不得不承认自己的缺点。改变自己，你将散发更多的人格气质`
+      text: `你确实很聪明，但是你不得不承认自己的缺点。改变自己，你将散发更多的人格气质`
     },
     {
       name: '凌文婧',
-      text:  `靖哥哥呀，你是一个很坚强，勇敢且倾国倾城、温婉娴淑、闭月羞花、沉鱼落雁的女孩。我也知道，你经历了一段痛苦的时光，承受了这个年龄段本不该承受的压力。 但正因如此，你更应该自强、自立，不要想着退学，好好学习，成为一个好医生。 相信光，让自己成为太阳。`
+      text: `靖哥哥呀，你是一个很坚强，勇敢且倾国倾城、温婉娴淑、闭月羞花、沉鱼落雁的女孩。我也知道，你经历了一段痛苦的时光，承受了这个年龄段本不该承受的压力。 但正因如此，你更应该自强、自立，不要想着退学，好好学习，成为一个好医生。 相信光，让自己成为太阳。`
     },
     {
       name: '唐勇',
-      text:  `寝室长，好久不见，啥时候寝室的人一起聚聚！`
+      text: `寝室长，好久不见，啥时候寝室的人一起聚聚！`
     },
     {
       name: '梁俊',
-      text:  `兵哥哥，国庆来长沙玩，不醉不归。`
+      text: `兵哥哥，国庆来长沙玩，不醉不归。`
     },
     {
       name: '王琦 ',
@@ -65,7 +68,7 @@ $(function () {
       name: '刘文灿',
       text: '要记住，你永远都是我的妹妹！在我眼里，你永远都是长不大的蠢孩子。'
     },
-  
+
   ]
   let skip = {
     left: 0,
@@ -120,14 +123,25 @@ $(function () {
       }).removeClass('info_text_active');
     },
     active() {
-      $('.left_top').animate({
-        "top": '-80px',
-        'left': '-80px'
-      }, 1500);
-      $('.info_top').animate({
-        "top": '0',
-        'left': '80px'
-      }, 1500);
+      if (pc) {
+        $('.left_top').animate({
+          "top": '-80px',
+          'left': '-80px'
+        }, 1500);
+        $('.info_top').animate({
+          "top": '0',
+          'left': '80px'
+        }, 1500);
+      }else{
+        $('.left_top').animate({
+          "top": '-30px',
+          'left': '-24px'
+        }, 1500);
+        $('.info_top').animate({
+          "top": '0',
+          'left': '40px'
+        }, 1500);
+      }
       $('.info_bottom').animate({
         "bottom": '0',
         'left': '0'
@@ -166,7 +180,7 @@ $(function () {
       flog = 0;
       $('.input').val("");
       $('.letter-text').text("");
-      if(this.time){
+      if (this.time) {
         clearInterval(this.time);
       }
     },
@@ -187,10 +201,14 @@ $(function () {
     text() {
       let text = '抱歉！ 由于时间问题，暂时没有写。不过先祝你万事如意，心想事成';
       let i = 0;
-      if(name === '朱翡珊'){
-        $('.letter-text').css({"color": '#E71B64'});
-      }else{
-        $('.letter-text').css({"color": '#000'});
+      if (name === '朱翡珊') {
+        $('.letter-text').css({
+          "color": '#E71B64'
+        });
+      } else {
+        $('.letter-text').css({
+          "color": '#000'
+        });
       }
       for (let i = 0; i < letter.length; i++) {
         if (name === letter[i].name) {
@@ -200,7 +218,7 @@ $(function () {
       }
       this.time = setInterval(() => {
         $('.letter-text').text(function (index, content) {
-          while(text[i] == ' '){
+          while (text[i] == ' ') {
             content += '\xa0';
             i++;
           }
@@ -215,7 +233,7 @@ $(function () {
     }
   }
   $('.btn1').click(function () {
-    if(lock === 1){
+    if (lock === 1) {
       return;
     }
     lock = 1;
@@ -227,7 +245,7 @@ $(function () {
     }, 800);
   })
   $('.btn2').click(function () {
-    if(lock === 2){
+    if (lock === 2) {
       return;
     }
     lock = 2;
@@ -239,7 +257,7 @@ $(function () {
     }, 800);
   })
   $('.btn3').click(function () {
-    if(lock === 3){
+    if (lock === 3) {
       return;
     }
     lock = 3;
@@ -251,7 +269,7 @@ $(function () {
     }, 800);
   })
   $('.btn4').click(function () {
-    if(lock === 4){
+    if (lock === 4) {
       return;
     }
     lock = 4;
@@ -273,7 +291,7 @@ $(function () {
     if (flog == 1) {
       return;
     }
-     flog = 1;
+    flog = 1;
     if (!name.trim()) {
       return;
     }
@@ -295,18 +313,18 @@ $(function () {
         }, 2000);
       } else if (oldName !== '朱翡珊') {
         $('.warning').text('干嘛想看别人的!').addClass('show');
-      
+
         setTimeout(function () {
-          $('.warning').removeClass('show').text(""); 
-           flog = 0;
-        },2000);
+          $('.warning').removeClass('show').text("");
+          flog = 0;
+        }, 2000);
       }
     }
 
 
 
 
-   
+
   })
 
   $('.comfirm_btn').click(function () {
@@ -319,7 +337,7 @@ $(function () {
     page4.active();
   })
 
-  $('.init').click(function(){
+  $('.init').click(function () {
     page4.init();
     $('.init').fadeOut('2000');
   })
