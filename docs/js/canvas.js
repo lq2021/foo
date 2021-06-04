@@ -2,6 +2,8 @@
 
   $("#body canvas").remove();
   var stars="<canvas id='canvas'></canvas>"
+
+
   $("body").prepend(stars)
     var canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d'),

@@ -229,6 +229,7 @@ $(function () {
     if (flog == 1) {
       return;
     }
+     flog = 1;
     if (!name.trim()) {
       return;
     }
@@ -250,8 +251,10 @@ $(function () {
         }, 2000);
       } else if (oldName !== '朱翡珊') {
         $('.warning').text('干嘛想看别人的!').addClass('show');
+      
         setTimeout(function () {
-          $('.warning').removeClass('show').text("");
+          $('.warning').removeClass('show').text(""); 
+           flog = 0;
         },2000);
       }
     }
@@ -259,7 +262,7 @@ $(function () {
 
 
 
-    flog = 1;
+   
   })
 
   $('.comfirm_btn').click(function () {
