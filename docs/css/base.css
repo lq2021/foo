@@ -161,7 +161,7 @@
  @font-face {
    font-family: 'myfont';
    font-style: normal;
-   src: url('../font/font.ttf');
+   src: url('../font/font.ttf') ;
  }
 
 
